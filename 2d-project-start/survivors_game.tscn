@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8uoqelc06eww"]
+[gd_scene load_steps=5 format=3 uid="uid://c8uoqelc06eww"]
 
 [ext_resource type="PackedScene" uid="uid://chksaajspye33" path="res://player.tscn" id="1_1d3xn"]
+[ext_resource type="Script" path="res://survivors_game.gd" id="1_decad"]
 [ext_resource type="PackedScene" uid="uid://ejf2takxtgry" path="res://pine_tree.tscn" id="2_8j5ii"]
-[ext_resource type="PackedScene" uid="uid://dxaey5yf7yoe2" path="res://mob.tscn" id="3_nc1fn"]
+
+[sub_resource type="Curve2D" id="Curve2D_vy187"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -139, -323, 0, 0, 0, 0, 2072, -362, 0, 0, 0, 0, 2115, 1573, 0, 0, 0, 0, -116, 1570, 0, 0, 0, 0, -134, -315)
+}
+point_count = 5
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_decad")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -16,6 +23,15 @@ offset_bottom = 1080.0
 
 [node name="Player" parent="." instance=ExtResource("1_1d3xn")]
 position = Vector2(945, 552)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-945, -552)
+curve = SubResource("Curve2D_vy187")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-139, -323)
+rotation = -0.0176372
 
 [node name="PineTree" parent="." instance=ExtResource("2_8j5ii")]
 position = Vector2(534, 331)
@@ -56,26 +72,8 @@ position = Vector2(940, 183)
 [node name="PineTree13" parent="." instance=ExtResource("2_8j5ii")]
 position = Vector2(456, 450)
 
-[node name="Mob" parent="." instance=ExtResource("3_nc1fn")]
-position = Vector2(722, 310)
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
 
-[node name="Mob3" parent="." instance=ExtResource("3_nc1fn")]
-position = Vector2(446, 362)
-
-[node name="Mob2" parent="." instance=ExtResource("3_nc1fn")]
-position = Vector2(1043, 302)
-
-[node name="Mob5" parent="." instance=ExtResource("3_nc1fn")]
-position = Vector2(969, 264)
-
-[node name="Mob6" parent="." instance=ExtResource("3_nc1fn")]
-position = Vector2(547, 405)
-
-[node name="Mob7" parent="." instance=ExtResource("3_nc1fn")]
-position = Vector2(825, 273)
-
-[node name="Mob8" parent="." instance=ExtResource("3_nc1fn")]
-position = Vector2(1122, 359)
-
-[node name="Mob4" parent="." instance=ExtResource("3_nc1fn")]
-position = Vector2(621, 330)
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
