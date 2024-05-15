@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgwscr0rnc4e0"
-path="res://.godot/imported/projectile.png-e03ae856d530df914009475206433400.ctex"
+uid="uid://ctcprpsi4vrhm"
+path="res://.godot/imported/water-pistol-icon-cartoon-style-vector-23435164-removebg-preview.png-d5124fc5e28a9d19b2c5adc241ecdfa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pistol/projectile.png"
-dest_files=["res://.godot/imported/projectile.png-e03ae856d530df914009475206433400.ctex"]
+source_file="res://pistol/water-pistol-icon-cartoon-style-vector-23435164-removebg-preview.png"
+dest_files=["res://.godot/imported/water-pistol-icon-cartoon-style-vector-23435164-removebg-preview.png-d5124fc5e28a9d19b2c5adc241ecdfa0.ctex"]
 
 [params]
 

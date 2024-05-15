@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://byl0i5xjlojnr"]
 
-[ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://pistol/pistol.png" id="1_gra73"]
 [ext_resource type="Script" path="res://gun.gd" id="1_jgbqr"]
+[ext_resource type="Texture2D" uid="uid://ctcprpsi4vrhm" path="res://pistol/water-pistol-icon-cartoon-style-vector-23435164-removebg-preview.png" id="2_nseya"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bj7db"]
 radius = 996.587
@@ -17,15 +17,16 @@ shape = SubResource("CircleShape2D_bj7db")
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
-position = Vector2(109, -11)
-texture = ExtResource("1_gra73")
+position = Vector2(185, 0)
+scale = Vector2(0.173107, 0.181195)
+texture = ExtResource("2_nseya")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
 unique_name_in_owner = true
-position = Vector2(26, -11)
+position = Vector2(207.26, -65.7049)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.04
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
