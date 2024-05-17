@@ -4,9 +4,14 @@ signal health_depleted
 
 var health = 100.0
 
+var normal_speed := 600
+var max_speed := 600
+
+var knew_speed := 1000
+
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left","move_right", "move_up", "move_down")
-	velocity = direction * 600
+	velocity = direction * max_speed
 	move_and_slide()
 	
 	if velocity.length() > 0.0:

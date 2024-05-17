@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8uoqelc06eww"]
+[gd_scene load_steps=6 format=3 uid="uid://c8uoqelc06eww"]
 
 [ext_resource type="PackedScene" uid="uid://chksaajspye33" path="res://player.tscn" id="1_1d3xn"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_decad"]
 [ext_resource type="PackedScene" uid="uid://ejf2takxtgry" path="res://pine_tree.tscn" id="2_8j5ii"]
+[ext_resource type="PackedScene" uid="uid://cw18xescimacg" path="res://powerup.tscn" id="4_fo685"]
 
 [sub_resource type="Curve2D" id="Curve2D_vy187"]
 _data = {
@@ -103,6 +104,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 156
 text = "Game Over"
+
+[node name="Powerup" parent="." instance=ExtResource("4_fo685")]
+position = Vector2(1374, 706)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

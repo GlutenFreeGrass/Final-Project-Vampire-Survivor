@@ -13,6 +13,9 @@ func _on_timer_timeout():
 	spawn_mob()
 
 
+func spawn_powerup():
+	var pwrup = preload("res://powerup.tscn").instantiate()
+
 func _on_player_health_depleted():
 	%GameOver.visible = true
 	get_tree().paused = true
