@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+
 signal health_depleted
 
 var health = 100.0
+
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left","move_right", "move_up", "move_down")
@@ -21,5 +23,4 @@ func _physics_process(delta):
 		%ProgressBar.value = health
 		if health <= 0.0:
 			health_depleted.emit()
-		
-		 
+	
