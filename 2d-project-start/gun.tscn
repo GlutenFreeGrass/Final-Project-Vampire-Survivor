@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://pistol/pistol.png" id="1_gra73"]
 [ext_resource type="Script" path="res://gun.gd" id="1_jgbqr"]
-[ext_resource type="AudioStream" uid="uid://c2fifqy4btnqy" path="res://laserpew.ogg" id="3_dlaer"]
+[ext_resource type="AudioStream" uid="uid://bhnrmfqr0g666" path="res://Untitled song (3).wav" id="3_m4vha"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bj7db"]
 radius = 996.587
@@ -31,6 +31,6 @@ wait_time = 0.3
 autostart = true
 
 [node name="BulletHit" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_dlaer")
+stream = ExtResource("3_m4vha")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
