@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8uoqelc06eww"]
+[gd_scene load_steps=6 format=3 uid="uid://c8uoqelc06eww"]
 
 [ext_resource type="PackedScene" uid="uid://chksaajspye33" path="res://player.tscn" id="1_1d3xn"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_decad"]
 [ext_resource type="PackedScene" uid="uid://ejf2takxtgry" path="res://pine_tree.tscn" id="2_8j5ii"]
+[ext_resource type="PackedScene" uid="uid://xaulas8dfbpl" path="res://player_two.tscn" id="2_mmqjf"]
 
 [sub_resource type="Curve2D" id="Curve2D_vy187"]
 _data = {
@@ -13,6 +14,10 @@ point_count = 5
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_decad")
+
+[node name="PlayerTwo" parent="." instance=ExtResource("2_mmqjf")]
+visible = false
+position = Vector2(1222, 540)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -25,6 +30,7 @@ offset_bottom = 1080.0
 position = Vector2(945, 552)
 
 [node name="Path2D" type="Path2D" parent="Player"]
+visible = false
 position = Vector2(-945, -552)
 curve = SubResource("Curve2D_vy187")
 
@@ -55,6 +61,7 @@ position = Vector2(1097, 272)
 position = Vector2(892, 344)
 
 [node name="PineTree8" parent="." instance=ExtResource("2_8j5ii")]
+visible = false
 position = Vector2(640, 436)
 
 [node name="PineTree9" parent="." instance=ExtResource("2_8j5ii")]
@@ -103,6 +110,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 156
 text = "Game Over"
+
+[node name="SplitScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="SplitScreen"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0.0941176, 0.0941176, 1)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
