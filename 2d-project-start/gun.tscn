@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://byl0i5xjlojnr"]
 
 [ext_resource type="Script" path="res://gun.gd" id="1_jgbqr"]
-[ext_resource type="Texture2D" uid="uid://ctcprpsi4vrhm" path="res://pistol/water-pistol-icon-cartoon-style-vector-23435164-removebg-preview.png" id="2_nseya"]
+[ext_resource type="Texture2D" path="res://pistol/water-pistol-icon-cartoon-style-vector-23435164-removebg-preview.png" id="2_nseya"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bj7db"]
 radius = 996.587
