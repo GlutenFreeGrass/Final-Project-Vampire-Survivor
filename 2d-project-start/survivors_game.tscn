@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://chksaajspye33" path="res://player.tscn" id="1_1d3xn"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_decad"]
-[ext_resource type="PackedScene" uid="uid://ejf2takxtgry" path="res://pine_tree.tscn" id="2_8j5ii"]
+[ext_resource type="PackedScene" uid="uid://coxl5v7xm0xbp" path="res://random_tree_placer_1.tscn" id="4_i1gsd"]
 
 [sub_resource type="Curve2D" id="Curve2D_vy187"]
 _data = {
@@ -32,45 +32,6 @@ curve = SubResource("Curve2D_vy187")
 unique_name_in_owner = true
 position = Vector2(-139, -323)
 rotation = -0.0176372
-
-[node name="PineTree" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(534, 331)
-
-[node name="PineTree2" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(1632, 402)
-
-[node name="PineTree3" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(991, 801)
-
-[node name="PineTree4" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(1625, 893)
-
-[node name="PineTree5" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(249, 844)
-
-[node name="PineTree6" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(1097, 272)
-
-[node name="PineTree7" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(892, 344)
-
-[node name="PineTree8" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(640, 436)
-
-[node name="PineTree9" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(1065, 418)
-
-[node name="PineTree10" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(1294, 324)
-
-[node name="PineTree11" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(710, 252)
-
-[node name="PineTree12" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(940, 183)
-
-[node name="PineTree13" parent="." instance=ExtResource("2_8j5ii")]
-position = Vector2(456, 450)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
@@ -103,6 +64,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 156
 text = "Game Over"
+
+[node name="RandomTreePlacer" parent="." instance=ExtResource("4_i1gsd")]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(187.695, 723.747)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

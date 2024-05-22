@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://coxl5v7xm0xbp"]
+
+[ext_resource type="Script" path="res://RandomTreePlacer.gd" id="1_r0r1y"]
+
+[node name="RandomTreePlacer" type="Node2D"]
+script = ExtResource("1_r0r1y")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
