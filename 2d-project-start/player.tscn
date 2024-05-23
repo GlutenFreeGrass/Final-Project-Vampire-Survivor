@@ -48,8 +48,6 @@ position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_ag51m")
 debug_color = Color(0.65098, 0.329412, 1, 0.419608)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
 offset_left = -80.0

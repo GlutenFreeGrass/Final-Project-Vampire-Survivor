@@ -2,14 +2,21 @@ extends CharacterBody2D
 
 var health = 3
 
+
 @onready var player = get_node("/root/Game/Player")
+@onready var playerdos = get_node("/root/Game/PlayerTwo")
+
+
+	
+	
 
 func _ready():
 	%Slime.play_walk()
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
-	velocity = direction * 300.0
+		
+	velocity = direction * 300
 	move_and_slide()
 	
 func take_damage():
