@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
-signal health_depleted
+signal health_depleted2
 
 var health = 100.0
+@export var speed = 600
 
 func _physics_process(delta):
 	var direction = Input.get_vector("mve_left","mve_right", "mve_up", "mve_down")
-	velocity = direction * 600
+	velocity = direction * speed
 	move_and_slide()
 	
 	if velocity.length() > 0.0:
@@ -20,6 +21,5 @@ func _physics_process(delta):
 		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
 		%ProgressBar.value = health
 		if health <= 0.0:
-			health_depleted.emit()
+			health_depleted2.emit()
 		
-		 
