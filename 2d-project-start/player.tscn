@@ -59,3 +59,13 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_wsuq3")
 value = 100.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -154.0
+offset_right = 32.0
+offset_bottom = -131.0
+theme_override_colors/font_color = Color(1, 0.572549, 0.176471, 1)
+text = "Player
+"
+horizontal_alignment = 1
