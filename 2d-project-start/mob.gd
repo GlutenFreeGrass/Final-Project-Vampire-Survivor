@@ -2,16 +2,39 @@ extends CharacterBody2D
 
 var health = 3
 
+
 @onready var player = get_node("/root/Game/Player")
+@onready var playerdos = get_node("/root/Game/PlayerTwo")
+@export var speed: float = 300
+
+@export var players: Array
+	
+	
 
 func _ready():
+		players = get_tree().get_nodes_in_group("players")
+		
+func get_closest_player() -> CharacterBody2D:
+	var clost_plr = CharacterBody2D
+	var clost_distnce = 99999
+	for player in players:
+		if player != CharacterBody2D:
+			var distance = global_position.distance_to(player.global_position)
+			if distance < clost_distnce:
+				clost_distnce = distance
+				clost_plr = player
+	return clost_plr
+	
 	%Slime.play_walk()
 
 func _physics_process(delta):
-	var direction = global_position.direction_to(player.global_position)
-	velocity = direction * 300.0
-	move_and_slide()
-	
+	var player = get_closest_player()
+	if player:
+		var direction = global_position.direction_to(player.global_position)
+		velocity = direction * speed
+		move_and_slide()
+	else:
+		print("??????")
 func take_damage():
 	health -= 1
 	$Slime.play_hurt()

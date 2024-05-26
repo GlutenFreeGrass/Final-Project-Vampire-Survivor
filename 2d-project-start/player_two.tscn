@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://chksaajspye33"]
+[gd_scene load_steps=8 format=3 uid="uid://xaulas8dfbpl"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_2lxd6"]
-[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_1rwpj"]
-[ext_resource type="PackedScene" uid="uid://byl0i5xjlojnr" path="res://gun.tscn" id="3_7xr2s"]
+[ext_resource type="Script" path="res://player_two.gd" id="1_psnl8"]
+[ext_resource type="PackedScene" uid="uid://c3f31g8tcao08" path="res://characters/happy_boo2/happy_boo_2.tscn" id="2_5b7pc"]
+[ext_resource type="PackedScene" uid="uid://byl0i5xjlojnr" path="res://gun.tscn" id="3_4l5kc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ihnyb"]
 radius = 33.0151
@@ -24,26 +24,25 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="Player" type="CharacterBody2D" groups=["players"]]
-script = ExtResource("1_2lxd6")
+[node name="PlayerTwo" type="CharacterBody2D" groups=["players"]]
+script = ExtResource("1_psnl8")
 
-[node name="HappyBoo" parent="." instance=ExtResource("2_1rwpj")]
+[node name="HappyBoo2" parent="." instance=ExtResource("2_5b7pc")]
 unique_name_in_owner = true
-position = Vector2(2.08165e-12, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_ihnyb")
 
-[node name="Gun" parent="." instance=ExtResource("3_7xr2s")]
+[node name="Gun" parent="." instance=ExtResource("3_4l5kc")]
 position = Vector2(0, -45)
 
-[node name="HurtBox" type="Area2D" parent="."]
+[node name="HurtBox2" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox2"]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_ag51m")
 debug_color = Color(0.65098, 0.329412, 1, 0.419608)

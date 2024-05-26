@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7tvu6w17pyjp"]
+
+[ext_resource type="Script" path="res://start_menu.gd" id="1_wmd76"]
+
+[sub_resource type="SystemFont" id="SystemFont_8u3kh"]
+
+[sub_resource type="SystemFont" id="SystemFont_tgov3"]
+
+[node name="StartMenu" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wmd76")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.203922, 0.596078, 0.909804, 1)
+theme_override_fonts/font = SubResource("SystemFont_8u3kh")
+theme_override_font_sizes/font_size = 150
+text = "Slime Survivors"
+
+[node name="SinglePlayerButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.721569, 0.721569, 0.721569, 1)
+theme_override_colors/font_hover_color = Color(0.203922, 0.596078, 0.909804, 1)
+theme_override_fonts/font = SubResource("SystemFont_tgov3")
+theme_override_font_sizes/font_size = 70
+text = "1 Player"
+
+[node name="TwoPlayerButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.721569, 0.721569, 0.721569, 1)
+theme_override_colors/font_hover_color = Color(0.203922, 0.596078, 0.909804, 1)
+theme_override_fonts/font = SubResource("SystemFont_tgov3")
+theme_override_font_sizes/font_size = 70
+text = "2 Players"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.721569, 0.721569, 0.721569, 1)
+theme_override_colors/font_hover_color = Color(0.203922, 0.596078, 0.909804, 1)
+theme_override_fonts/font = SubResource("SystemFont_tgov3")
+theme_override_font_sizes/font_size = 70
+text = "Quit Game"
+
+[connection signal="pressed" from="VBoxContainer/SinglePlayerButton" to="." method="_on_single_player_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TwoPlayerButton" to="." method="_on_two_player_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
