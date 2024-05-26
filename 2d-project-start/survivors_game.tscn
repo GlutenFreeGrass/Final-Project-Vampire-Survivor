@@ -35,6 +35,8 @@ unique_name_in_owner = true
 position = Vector2(-139, -323)
 rotation = -0.0176372
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
 [node name="PineTree" parent="." instance=ExtResource("2_8j5ii")]
 position = Vector2(534, 331)
 
