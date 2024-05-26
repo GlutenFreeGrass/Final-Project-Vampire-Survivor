@@ -50,6 +50,7 @@ func _on_player_two_health_depleted_2():
 	$HBoxContainer/SubViewportContainer/SubViewport/Game2/PlayerTwo/Gun.visible = false
 	$HBoxContainer/SubViewportContainer/SubViewport/Game2/PlayerTwo/Gun/Timer.wait_time = INF
 	$HBoxContainer/SubViewportContainer/SubViewport/Game2/PlayerTwo.speed = 0
+	$HBoxContainer/SubViewportContainer2/SubViewport/Watch/ColorRect.stop()
 	#players["2"].viewport.set_process_mode(Viewport.PROCESS_MODE_DISABLED)
 
 func _on_player_health_depleted():
@@ -59,6 +60,7 @@ func _on_player_health_depleted():
 	$HBoxContainer/SubViewportContainer/SubViewport/Game2/Player/Gun.visible = false
 	$HBoxContainer/SubViewportContainer/SubViewport/Game2/Player/Gun/Timer.wait_time = INF
 	$HBoxContainer/SubViewportContainer/SubViewport/Game2/Player.speed = 0
+	$HBoxContainer/SubViewportContainer/SubViewport/Game2/Watch/ColorRect.stop()
 	#players["1"].viewport.set_process_mode(Viewport.PROCESS_MODE_DISABLED)
 
 

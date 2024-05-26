@@ -30,6 +30,7 @@ func _on_player_health_depleted():
 	$Player/Gun/Timer.wait_time = INF
 	$Player.speed = 0
 	$AudioStreamPlayer.stop()
+	$Watch/ColorRect.stop()
 	print("pl1 dead")
 
 
