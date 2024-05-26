@@ -32,5 +32,6 @@ autostart = true
 
 [node name="BulletHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_m4vha")
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

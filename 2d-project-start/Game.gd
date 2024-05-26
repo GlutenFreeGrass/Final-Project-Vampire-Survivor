@@ -60,3 +60,19 @@ func _on_player_health_depleted():
 	$HBoxContainer/SubViewportContainer/SubViewport/Game2/Player/Gun/Timer.wait_time = INF
 	$HBoxContainer/SubViewportContainer/SubViewport/Game2/Player.speed = 0
 	#players["1"].viewport.set_process_mode(Viewport.PROCESS_MODE_DISABLED)
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://start_menu.tscn")
+
+
+func _on_button_2_pressed():
+	get_tree().change_scene_to_file("res://splitGame.tscn")# Replace with function body.
+
+
+func _on_button4_pressed():
+	get_tree().change_scene_to_file("res://start_menu.tscn")
+
+
+func _on_button4_2_pressed():
+	get_tree().change_scene_to_file("res://splitGame.tscn")
