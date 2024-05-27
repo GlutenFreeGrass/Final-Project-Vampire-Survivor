@@ -25,4 +25,9 @@ func _physics_process(delta):
 		if health <= 0.0:
 			health_depleted.emit()
 	
+func _input(event):
+	if Input.is_action_pressed("devpanelkey"):
+		var canvas_layer = get_node("/root/Game/Player/DevPanel")
+		if canvas_layer:
+			canvas_layer.toggle_visibility()
 

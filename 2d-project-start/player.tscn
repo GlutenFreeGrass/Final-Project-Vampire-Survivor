@@ -61,11 +61,14 @@ show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
+anchors_preset = -1
 offset_left = -30.0
 offset_top = -154.0
 offset_right = 32.0
 offset_bottom = -131.0
+size_flags_horizontal = 15
 theme_override_colors/font_color = Color(1, 0.572549, 0.176471, 1)
 text = "Player
 "
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
