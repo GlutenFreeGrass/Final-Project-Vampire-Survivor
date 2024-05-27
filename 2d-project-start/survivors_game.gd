@@ -47,3 +47,46 @@ func _on_button_pressed():
 
 func _on_button_2_pressed():
 	get_tree().change_scene_to_file("res://survivors_game.tscn")
+
+
+func _on_mxhealth_pressed():
+	if $Player.health == 100:
+		$Player/ProgressBar.value = 100
+		$Player.health = INF
+	else:
+		$Player/ProgressBar.value = 100
+		$Player.health = 100
+
+
+func _on_infhealth_pressed():
+	if $Player.health == INF:
+		$Player/ProgressBar.value = 100
+		$Player.health = 100
+	else:
+		$Player/ProgressBar.value = 100
+		$Player.health = INF # Replace with function body.
+
+
+func _on_crzyspeed_pressed():
+	if $Player.speed == 600:
+		$Player.speed = 2000 # Replace with function body.
+		$Player/DevPanel/ColorRect/Label2.text = "Player Speed = %d%%" % $Player.speed
+	else:
+
+		$Player.speed = 600
+		$Player/DevPanel/ColorRect/Label2.text = "Player Speed = %d%%" % $Player.speed
+
+
+func _on_healthdisplay_pressed():
+	if $Player/Label.text.contains("Player Health ="):
+		$Timer2.stop()
+		$Player/Label.text = "Player"
+	else:
+		$Timer2.start()
+
+func _updatehealth():
+	$Player/Label.text = "Player Health = %d%%" % $Player.health
+
+func _on_timer_2_timeout():
+	_updatehealth()
+	$Player/DevPanel/ColorRect/Label2.text = "Player Speed = %d%%" % $Player.speed
