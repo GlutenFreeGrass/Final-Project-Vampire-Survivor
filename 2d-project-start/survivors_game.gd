@@ -11,11 +11,6 @@ func _ready():
 	pass
 
 
-func spawn_mob2():
-	var new_mob = preload("res://mob.tscn").instantiate()
-	$PlayerTwo/Path2D/PathFollow2D.progress_ratio = randf()
-	new_mob.global_position = $PlayerTwo/Path2D/PathFollow2D.global_position
-	add_child(new_mob)
 
 func spawn_mob():
 	var new_mob = preload("res://mob.tscn").instantiate()
@@ -25,7 +20,7 @@ func spawn_mob():
 
 func _on_timer_timeout():
 	spawn_mob()
-	spawn_mob2()
+
 
 
 

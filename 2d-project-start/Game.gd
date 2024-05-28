@@ -19,6 +19,9 @@ signal random_signal
 	}
 	
 }
+
+
+
 	
 func _ready() -> void:
 	$HBoxContainer/SubViewportContainer/SubViewport/Game2/AudioStreamPlayer.play()
