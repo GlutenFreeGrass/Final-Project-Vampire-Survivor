@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://chksaajspye33" path="res://player.tscn" id="1_1d3xn"]
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_decad"]
-[ext_resource type="PackedScene" uid="uid://coxl5v7xm0xbp" path="res://random_tree_placer_1.tscn" id="4_i1gsd"]
+[ext_resource type="PackedScene" uid="uid://bgjyodpe6gwl3" path="res://random_tree_placer_1.tscn" id="4_i1gsd"]
 
 [sub_resource type="Curve2D" id="Curve2D_vy187"]
 _data = {
@@ -13,6 +13,9 @@ point_count = 5
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_decad")
+
+[node name="RandomTreePlacer" parent="." instance=ExtResource("4_i1gsd")]
+scale = Vector2(187.695, 723.747)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -64,11 +67,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 156
 text = "Game Over"
-
-[node name="RandomTreePlacer" parent="." instance=ExtResource("4_i1gsd")]
-light_mask = 2
-visibility_layer = 2
-scale = Vector2(187.695, 723.747)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
